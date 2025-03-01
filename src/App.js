@@ -1,23 +1,17 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-function App() {
-  const [count, setCount] = useState(4); 
+export default function Demo() {
+  const [count, setCount] = useState(0);
 
-  function decrease(){
-    setCount(count-1)
-  };
+useEffect(() =>{
+  
+}, []);
 
-function increase(){
-  setCount (count + 1)
-}
   return (
-    <>
-      <button onClick={decrease}>-</button>
-      <span>{count}</span>
-      <button onClick={increase}>+</button>
-    </>
+    <div className="tutorial">
+      <h1>{count}</h1>
+      <button onClick={() => setCount(count - 1)}>Decrement</button>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
   );
 }
-
-export default App;
-
